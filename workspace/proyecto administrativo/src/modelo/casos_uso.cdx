@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slime:DocumentModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:slime="http://de.mvmsoft.slimeuml.model.slimemodel">
+  <children xsi:type="slime:SystemBoundaryModel" x="116" y="44" width="918" height="913" name="Sistema Administrativo">
+    <children xsi:type="slime:UseCaseModel" x="98" y="96" width="-1" height="-1" incomingConnections="//@children.1/@outgoingConnections.0" name="Vender&#xA;Productos">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.1" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.2" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.3" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.13" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="293" y="181" width="-1" height="-1" incomingConnections="//@children.0/@children.0/@outgoingConnections.0" name="Buscar&#xA;Productos">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.6" label="&lt;&lt;extend>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="329" y="52" width="-1" height="-1" incomingConnections="//@children.0/@children.0/@outgoingConnections.1" name="Crear&#xA;Factura"/>
+    <children xsi:type="slime:UseCaseModel" x="343" y="109" width="-1" height="-1" incomingConnections="//@children.0/@children.0/@outgoingConnections.2" name="Cobrar&#xA;Factura">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.4" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="475" y="220" width="-1" height="-1" incomingConnections="//@children.0/@children.3/@outgoingConnections.0 //@children.0/@children.6/@outgoingConnections.0 //@children.0/@children.8/@outgoingConnections.0 //@children.0/@children.11/@outgoingConnections.0 //@children.0/@children.12/@outgoingConnections.0" name="Elegir&#xA;Tipo Pago">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.5" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="721" y="222" width="-1" height="-1" incomingConnections="//@children.0/@children.4/@outgoingConnections.0" name="Elegir&#xA;Cuenta Bancaria"/>
+    <children xsi:type="slime:UseCaseModel" x="76" y="295" width="-1" height="-1" incomingConnections="//@children.2/@outgoingConnections.0 //@children.0/@children.1/@outgoingConnections.0" name="Comprar&#xA;Productos">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.4" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.13" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="75" y="412" width="-1" height="-1" incomingConnections="//@children.3/@outgoingConnections.0" name="Administrar&#xA;Empleados">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.13" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="97" y="481" width="-1" height="-1" incomingConnections="//@children.3/@outgoingConnections.1" name="Pagar&#xA;Nómina">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.4" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="397" y="771" width="-1" height="-1" incomingConnections="//@children.4/@outgoingConnections.0 //@children.2/@outgoingConnections.1" name="Verificar&#xA;Cuentas por Pagar">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.13" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="50" y="702" width="-1" height="-1" incomingConnections="//@children.4/@outgoingConnections.1 //@children.5/@outgoingConnections.0" name="Verificar&#xA;Cuentas por Cobrar">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.13" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="124" y="606" width="-1" height="-1" incomingConnections="//@children.5/@outgoingConnections.1" name="Cobrar&#xA;Cuenta">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.4" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.13" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="78" y="209" width="-1" height="-1" incomingConnections="//@children.2/@outgoingConnections.2" name="Pagar&#xA;Cuenta">
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.4" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+      <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.13" label="&lt;&lt;include>>" type="DEPENDENCY" toNavigable="true"/>
+    </children>
+    <children xsi:type="slime:UseCaseModel" x="638" y="380" width="-1" height="-1" incomingConnections="//@children.0/@children.0/@outgoingConnections.3 //@children.0/@children.12/@outgoingConnections.1 //@children.0/@children.6/@outgoingConnections.1 //@children.0/@children.7/@outgoingConnections.0 //@children.0/@children.11/@outgoingConnections.1 //@children.0/@children.10/@outgoingConnections.0 //@children.0/@children.9/@outgoingConnections.0" name="Autenticar&#xA;Usuario"/>
+    <children xsi:type="slime:UseCaseModel" x="644" y="495" width="-1" height="-1" incomingConnections="//@children.1/@outgoingConnections.1 //@children.2/@outgoingConnections.3 //@children.3/@outgoingConnections.2 //@children.5/@outgoingConnections.2 //@children.4/@outgoingConnections.2" name="Recuperar&#xA;Contraseña"/>
+    <children xsi:type="slime:UseCaseModel" x="103" y="826" width="-1" height="-1" incomingConnections="//@children.4/@outgoingConnections.3" name="Administrar&#xA;Usuarios"/>
+    <children xsi:type="slime:UseCaseModel" x="679" y="602" width="-1" height="-1" incomingConnections="//@children.1/@outgoingConnections.2 //@children.2/@outgoingConnections.4 //@children.3/@outgoingConnections.3 //@children.5/@outgoingConnections.3 //@children.4/@outgoingConnections.4" name="Cambiar&#xA;Contraseña"/>
+  </children>
+  <children xsi:type="slime:ActorModel" x="16" y="186" width="53" height="75" name="Vendedor">
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.0"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.14"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.16"/>
+  </children>
+  <children xsi:type="slime:ActorModel" x="20" y="326" width="61" height="75" name="Comprador">
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.6"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.9"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.12"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.14"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.16"/>
+  </children>
+  <children xsi:type="slime:ActorModel" x="25" y="504" width="38" height="75" name="RRHH">
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.7"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.8"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.14"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.16"/>
+  </children>
+  <children xsi:type="slime:ActorModel" x="14" y="833" width="43" height="75" name="Gerente">
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.9"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.10"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.14"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.15"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.16"/>
+  </children>
+  <children xsi:type="slime:ActorModel" x="13" y="660" width="51" height="75" name="Cobrador">
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.10"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.11"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.14"/>
+    <outgoingConnections xsi:type="slime:ClassConnectionModel" target="//@children.0/@children.16"/>
+  </children>
+</slime:DocumentModel>

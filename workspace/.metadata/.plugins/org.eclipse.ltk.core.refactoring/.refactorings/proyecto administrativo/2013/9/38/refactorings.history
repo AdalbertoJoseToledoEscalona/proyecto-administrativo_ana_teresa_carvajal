@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;diagrama_entidad_relacion.clay&apos; to &apos;proyecto administrativo/src/modelo&apos;&#x0A;- Original project: &apos;proyecto administrativo&apos;&#x0A;- Destination element: &apos;proyecto administrativo/src/modelo&apos;&#x0A;- Original element: &apos;diagrama_entidad_relacion.clay&apos;" description="Copy file" destination="/src&lt;modelo" element1="src/modelo/diagrama_entidad_relacion.clay" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1379396570446" units="0" version="1.0"/>
+</session>

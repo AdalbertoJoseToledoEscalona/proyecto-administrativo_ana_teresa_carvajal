@@ -1,0 +1,74 @@
+<uml>
+   <greenVersion="30100"/>
+   <type>
+      <name="=proyecto administrativo/src<modelo.personas{Persona.java[Persona"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="45"/>
+      <y="49"/>
+   </type>
+   <type>
+      <name="=proyecto administrativo/src<modelo.ventas{Cliente.java[Cliente"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="45"/>
+      <y="340"/>
+   </type>
+   <type>
+      <name="=proyecto administrativo/src<modelo.empresas{Empresa.java[Empresa"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="414"/>
+      <y="77"/>
+   </type>
+   <type>
+      <name="=proyecto administrativo/src<modelo.empresas{EmpresaSistema.java[EmpresaSistema"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="736"/>
+      <y="88"/>
+   </type>
+   <type>
+      <name="=proyecto administrativo/src<modelo.compras{Proveedor.java[Proveedor"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="425"/>
+      <y="346"/>
+   </type>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.composition.CompositionPart"/>
+      <sourceType="=proyecto administrativo/src<modelo.ventas{Cliente.java[Cliente"/>
+      <targetType="=proyecto administrativo/src<modelo.personas{Persona.java[Persona"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.composition.CompositionPart"/>
+      <sourceType="=proyecto administrativo/src<modelo.compras{Proveedor.java[Proveedor"/>
+      <targetType="=proyecto administrativo/src<modelo.empresas{Empresa.java[Empresa"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.composition.CompositionPart"/>
+      <sourceType="=proyecto administrativo/src<modelo.compras{Proveedor.java[Proveedor"/>
+      <targetType="=proyecto administrativo/src<modelo.personas{Persona.java[Persona"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=proyecto administrativo/src<modelo.empresas{EmpresaSistema.java[EmpresaSistema"/>
+      <targetType="=proyecto administrativo/src<modelo.empresas{Empresa.java[Empresa"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.composition.CompositionPart"/>
+      <sourceType="=proyecto administrativo/src<modelo.ventas{Cliente.java[Cliente"/>
+      <targetType="=proyecto administrativo/src<modelo.empresas{Empresa.java[Empresa"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+</uml>
+

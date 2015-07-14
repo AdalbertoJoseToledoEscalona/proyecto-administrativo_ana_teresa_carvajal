@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clay-model clay-version="2.0.1">
+<database-model author="" begin-script="" end-script="" id="63ae13:140040f52ea:-8000" name="diagrama_entidad_relacion" sql-dialect-id="jp.azzurri.clay.dialect.Postgre_7_3_Dialect" version="1.0">
+<schema-list>
+<schema id="63ae13:140040f52ea:-7ffd" name="proyecto_administrativo">
+<table-list>
+<table id="63ae13:140040f52ea:-7fff" name="productos">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ffa" mandatory="true" name="id_producto">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ff7" mandatory="true" name="nombre">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ff6" mandatory="false" name="descripcion">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ff5" mandatory="true" name="precio">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f4a" mandatory="true" name="cantidad_inicial">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7ffe" name="PK_PRODUCTOS">
+<primary-key-column name="id_producto"/>
+</primary-key>
+</table>
+<table id="63ae13:140040f52ea:-7ff4" name="bancos">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ff0" mandatory="true" name="id_banco">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7fef" mandatory="true" name="nombre">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7fee" mandatory="false" name="descripcion">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7ff3" name="PK_BANCOS">
+<primary-key-column name="id_banco"/>
+</primary-key>
+</table>
+<table id="63ae13:140040f52ea:-7fed" name="cuentas_bancarias">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7fe9" mandatory="true" name="id_cuenta_bancaria">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="20" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7fe8" mandatory="false" name="numero">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7fe7" mandatory="false" name="descripcion">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f47" mandatory="true" name="saldo_inicial">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7fa5" mandatory="false" name="id_banco">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7fec" name="PK_CUENTAS_BANCARIAS">
+<primary-key-column name="id_cuenta_bancaria"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-7fa7" name="FK_cuentas_bancarias_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_BANCOS" referenced-table="bancos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_banco" referenced-key-column-name="id_banco"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7f44" name="empleados">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f40" mandatory="true" name="id_empleado">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f3f" mandatory="true" name="sueldo">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7dde" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f16" mandatory="true" name="ci">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7def" mandatory="true" name="id_cargo">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7f43" name="PK_EMPLEADOS">
+<primary-key-column name="id_empleado"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-7f18" name="FK_empleados_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PERSONAS" referenced-table="personas" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ci" referenced-key-column-name="ci"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-7df1" name="FK_empleados_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_CARGOS" referenced-table="cargos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_cargo" referenced-key-column-name="id_cargo"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7f3e" name="personas">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f3a" mandatory="true" name="ci">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f39" mandatory="true" name="nombre">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f38" mandatory="true" name="apellido">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="11" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f37" mandatory="false" name="telefono">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f34" mandatory="false" name="email">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7f3d" name="PK_PERSONAS">
+<primary-key-column name="ci"/>
+</primary-key>
+</table>
+<table id="63ae13:140040f52ea:-7f33" name="usuarios">
+<column-list>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f2f" mandatory="true" name="usuario">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7f2e" mandatory="true" name="clave">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7eb6" mandatory="true" name="ci">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7e80" mandatory="true" name="id_tipo_usuario">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7f32" name="PK_USUARIOS">
+<primary-key-column name="usuario"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-7eb8" name="FK_usuarios_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PERSONAS" referenced-table="personas" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ci" referenced-key-column-name="ci"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-7e82" name="FK_usuarios_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_TIPOS_USUARIOS" referenced-table="tipos_usuarios" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_tipo_usuario" referenced-key-column-name="id_tipo_usuario"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7ea5" name="tipos_usuarios">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ea1" mandatory="true" name="id_tipo_usuario">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ea0" mandatory="true" name="nombre">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7e9f" mandatory="false" name="descripcion">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7ea4" name="PK_TIPOS_USUARIOS">
+<primary-key-column name="id_tipo_usuario"/>
+</primary-key>
+</table>
+<table id="63ae13:140040f52ea:-7e5a" name="clientes">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7e56" mandatory="true" name="id_cliente">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7e55" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7e1f" mandatory="false" name="ci">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7c64" mandatory="false" name="rif">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7e59" name="PK_CLIENTES">
+<primary-key-column name="id_cliente"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-7e21" name="FK_clientes_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PERSONAS" referenced-table="personas" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ci" referenced-key-column-name="ci"/>
+</foreign-key>
+<foreign-key id="394bb:1408f3dd451:-7c66" name="FK_clientes_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_EMPRESAS" referenced-table="empresas" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="rif" referenced-key-column-name="rif"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7e12" name="cargos">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7e0e" mandatory="true" name="id_cargo">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7e0d" mandatory="true" name="nombre">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7e0c" mandatory="false" name="descripcion">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7e11" name="PK_CARGOS">
+<primary-key-column name="id_cargo"/>
+</primary-key>
+</table>
+<table id="63ae13:140040f52ea:-7ddb" name="tipos_pago">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7dd7" mandatory="true" name="id_tipo_pago">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7dd6" mandatory="true" name="nombre">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7dda" name="PK_TIPOS_PAGO">
+<primary-key-column name="id_tipo_pago"/>
+</primary-key>
+</table>
+<table id="63ae13:140040f52ea:-7dd5" name="tipospago_cuentasbancarias">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7dcf" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7da5" mandatory="true" name="id_tipo_pago">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7d78" mandatory="true" name="id_cuenta_bancaria">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7dd4" name="PK_TIPOSPAGO_CUENTASBANCARIAS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-7da7" name="FK_tipospago_cuentasbancarias_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_TIPOS_PAGO" referenced-table="tipos_pago" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_tipo_pago" referenced-key-column-name="id_tipo_pago"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-7d7a" name="FK_tipospago_cuentasbancarias_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_CUENTAS_BANCARIAS" referenced-table="cuentas_bancarias" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_cuenta_bancaria" referenced-key-column-name="id_cuenta_bancaria"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7d69" name="ventas">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7d65" mandatory="true" name="id_venta">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7d64" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7caf" mandatory="true" name="id_producto">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7cab" mandatory="true" name="precio_unitario">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7703" mandatory="true" name="cantidad">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7c9d" mandatory="true" name="iva_porcentaje">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7c9c" mandatory="true" name="iva_money">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7701" mandatory="true" name="precio_pagar">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7c24" mandatory="true" name="id_factura_venta">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7d68" name="PK_VENTAS">
+<primary-key-column name="id_venta"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-7cb1" name="FK_ventas_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PRODUCTOS" referenced-table="productos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_producto" referenced-key-column-name="id_producto"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-7c26" name="FK_ventas_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_FACTURAS_VENTA" referenced-table="facturas_venta" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_factura_venta" referenced-key-column-name="id_factura_venta"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7ca7" name="facturas_venta">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ca3" mandatory="true" name="id_factura_venta">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ca2" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a91" mandatory="true" name="fecha_hora_vencimiento">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7b71" mandatory="true" name="id_cliente">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7b3c" mandatory="true" name="usuario">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7c92" mandatory="true" name="cerrada">
+<data-type name="BOOLEAN" selected-variant-pattern="BOOLEAN"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7ca6" name="PK_FACTURAS_VENTA">
+<primary-key-column name="id_factura_venta"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-7b73" name="FK_facturas_venta_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_CLIENTES" referenced-table="clientes" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_cliente" referenced-key-column-name="id_cliente"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-7b3e" name="FK_facturas_venta_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_USUARIOS" referenced-table="usuarios" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="usuario" referenced-key-column-name="usuario"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7b10" name="cuotas_venta">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7b0c" mandatory="true" name="id_cuota_venta">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7b0b" mandatory="true" name="monto">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7b0a" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7ac9" mandatory="true" name="id_factura_venta">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7aaa" mandatory="true" name="id_tipo_pago">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7924" mandatory="true" name="usuario">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7856" mandatory="false" name="numero_tarjeta">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7855" mandatory="false" name="codigo_seguridad">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7812" mandatory="false" name="id_banco">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7b0f" name="PK_CUOTAS_VENTA">
+<primary-key-column name="id_cuota_venta"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-7acb" name="FK_cuotas_venta_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_FACTURAS_VENTA" referenced-table="facturas_venta" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_factura_venta" referenced-key-column-name="id_factura_venta"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-7aac" name="FK_cuotas_venta_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_TIPOS_PAGO" referenced-table="tipos_pago" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_tipo_pago" referenced-key-column-name="id_tipo_pago"/>
+</foreign-key>
+<foreign-key id="2c19a:140047c6454:-7926" name="FK_cuotas_venta_3" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_USUARIOS" referenced-table="usuarios" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="usuario" referenced-key-column-name="usuario"/>
+</foreign-key>
+<foreign-key id="2c19a:140047c6454:-7814" name="FK_cuotas_venta_4" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_BANCOS" referenced-table="bancos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_banco" referenced-key-column-name="id_banco"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7a89" name="compras">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a87" mandatory="true" name="id_compra">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a86" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-76e2" mandatory="true" name="id_mercancia">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a84" mandatory="true" name="precio_unitario">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-765e" mandatory="true" name="cantidad">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a83" mandatory="true" name="iva_porcentaje">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a82" mandatory="true" name="iva_money">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-765c" mandatory="true" name="precio_pagar">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a81" mandatory="true" name="id_factura_compra">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7a80" name="PK_COMPRAS">
+<primary-key-column name="id_compra"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-78ff" name="FK_compras_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_FACTURAS_COMPRA" referenced-table="facturas_compra" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_factura_compra" referenced-key-column-name="id_factura_compra"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-76e4" name="FK_compras_3" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_MERCANCIAS" referenced-table="mercancias" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_mercancia" referenced-key-column-name="id_mercancia"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7a55" name="facturas_compra">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a53" mandatory="true" name="id_factura_compra">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a50" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a4f" mandatory="true" name="fecha_hora_vencimiento">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-793b" mandatory="true" name="id_proveedor">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a4d" mandatory="true" name="usuario">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7c8f" mandatory="true" name="cerrada">
+<data-type name="BOOLEAN" selected-variant-pattern="BOOLEAN"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7a4c" name="PK_FACTURAS_COMPRA">
+<primary-key-column name="id_factura_compra"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-793d" name="FK_facturas_compra_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PROVEEDORES" referenced-table="proveedores" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_proveedor" referenced-key-column-name="id_proveedor"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-784f" name="FK_facturas_compra_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_USUARIOS" referenced-table="usuarios" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="usuario" referenced-key-column-name="usuario"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7a49" name="empresas">
+<column-list>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a45" mandatory="true" name="rif">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a44" mandatory="true" name="nombre">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a43" mandatory="false" name="descripcion">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7a48" name="PK_EMPRESAS">
+<primary-key-column name="rif"/>
+</primary-key>
+</table>
+<table id="63ae13:140040f52ea:-7a40" name="proveedores">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a3c" mandatory="true" name="id_proveedor">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7a3b" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-79f2" mandatory="false" name="rif">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7bd8" mandatory="false" name="ci">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-7a3f" name="PK_PROVEEDORES">
+<primary-key-column name="id_proveedor"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-79f4" name="FK_proveedor_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_EMPRESAS" referenced-table="empresas" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="rif" referenced-key-column-name="rif"/>
+</foreign-key>
+<foreign-key id="394bb:1408f3dd451:-7bda" name="FK_proveedor_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PERSONAS" referenced-table="personas" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ci" referenced-key-column-name="ci"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7793" name="cuotas_compra">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7791" mandatory="true" name="id_cuota_compra">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7790" mandatory="true" name="monto">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-778f" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-778e" mandatory="true" name="id_factura_compra">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-778d" mandatory="true" name="id_tipo_pago">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7906" mandatory="true" name="usuario">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7804" mandatory="false" name="numero_tarjeta">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7803" mandatory="false" name="codigo_seguridad">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-779f" mandatory="false" name="id_banco">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-778c" name="PK_CUOTAS_COMPRA">
+<primary-key-column name="id_cuota_compra"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-7764" name="FK_cuotas_compra_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_FACTURAS_COMPRA" referenced-table="facturas_compra" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_factura_compra" referenced-key-column-name="id_factura_compra"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-7730" name="FK_cuotas_compra_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_TIPOS_PAGO" referenced-table="tipos_pago" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_tipo_pago" referenced-key-column-name="id_tipo_pago"/>
+</foreign-key>
+<foreign-key id="2c19a:140047c6454:-7908" name="FK_cuotas_compra_3" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_USUARIOS" referenced-table="usuarios" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="usuario" referenced-key-column-name="usuario"/>
+</foreign-key>
+<foreign-key id="2c19a:140047c6454:-77a1" name="FK_cuotas_compra_4" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_BANCOS" referenced-table="bancos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_banco" referenced-key-column-name="id_banco"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="63ae13:140040f52ea:-7712" name="mercancias">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7710" mandatory="true" name="id_mercancia">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-770f" mandatory="true" name="nombre">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-770e" mandatory="false" name="descripcion">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-770d" mandatory="true" name="precio">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-7509" mandatory="true" name="cantidad_inicial">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-770a" name="PK_MERCANCIAS">
+<primary-key-column name="id_mercancia"/>
+</primary-key>
+</table>
+<table id="63ae13:140040f52ea:-75e0" name="mercancias_productos">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-75dc" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-758d" mandatory="true" name="id_mercancia">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-750d" mandatory="true" name="cantidad_mercancias">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-755c" mandatory="true" name="id_producto">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="63ae13:140040f52ea:-750c" mandatory="true" name="cantidad_productos">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+</column-list>
+<primary-key id="63ae13:140040f52ea:-75df" name="PK_MERCANCIAS_PRODUCTOS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="63ae13:140040f52ea:-758f" name="FK_mercancias_productos_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_MERCANCIAS" referenced-table="mercancias" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_mercancia" referenced-key-column-name="id_mercancia"/>
+</foreign-key>
+<foreign-key id="63ae13:140040f52ea:-755e" name="FK_mercancias_productos_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PRODUCTOS" referenced-table="productos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_producto" referenced-key-column-name="id_producto"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="2c19a:140047c6454:-7fbd" name="nomina">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7fb9" mandatory="true" name="id_pago_nomina">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7fac" mandatory="true" name="monto">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7fb8" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7d84" mandatory="true" name="usuario">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="2c19a:140047c6454:-7fbc" name="PK_NOMINA">
+<primary-key-column name="id_pago_nomina"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="2c19a:140047c6454:-7d86" name="FK_nomina_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_USUARIOS" referenced-table="usuarios" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="usuario" referenced-key-column-name="usuario"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="2c19a:140047c6454:-7fb5" name="nomina_empleados">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7fb1" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7fb0" mandatory="true" name="pago">
+<data-type name="MONEY" selected-variant-pattern="MONEY"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7faf" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7f22" mandatory="true" name="id_pago_nomina">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7ef8" mandatory="true" name="id_empleado">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7de2" mandatory="true" name="id_tipo_pago">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="2c19a:140047c6454:-7fb4" name="PK_NOMINA_EMPLEADOS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="2c19a:140047c6454:-7f24" name="FK_nomina_empleados_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_NOMINA" referenced-table="nomina" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_pago_nomina" referenced-key-column-name="id_pago_nomina"/>
+</foreign-key>
+<foreign-key id="2c19a:140047c6454:-7efa" name="FK_nomina_empleados_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_EMPLEADOS" referenced-table="empleados" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_empleado" referenced-key-column-name="id_empleado"/>
+</foreign-key>
+<foreign-key id="2c19a:140047c6454:-7de4" name="FK_nomina_empleados_3" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_TIPOS_PAGO" referenced-table="tipos_pago" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_tipo_pago" referenced-key-column-name="id_tipo_pago"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="2c19a:140047c6454:-7ee3" name="empresas_sistema">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7edf" mandatory="true" name="id_empresa_sistema">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7ede" mandatory="true" name="fecha_hora">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="2c19a:140047c6454:-7ea3" mandatory="true" name="rif">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="2c19a:140047c6454:-7ee2" name="PK_EMPRESAS_SISTEMA">
+<primary-key-column name="id_empresa_sistema"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="2c19a:140047c6454:-7ea5" name="FK_empresas_sistema_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_EMPRESAS" referenced-table="empresas" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="rif" referenced-key-column-name="rif"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="394bb:1408f3dd451:-7fa4" name="impuestos">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7fa0" mandatory="true" name="id_impuesto">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7f9f" mandatory="true" name="nombre">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7f9e" mandatory="true" name="porcentaje">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7f9d" mandatory="false" name="descripcion">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+</column-list>
+<primary-key id="394bb:1408f3dd451:-7fa3" name="PK_IMPUESTOS">
+<primary-key-column name="id_impuesto"/>
+</primary-key>
+</table>
+<table id="394bb:1408f3dd451:-7f9c" name="impuestos_productos">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7f98" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7f63" mandatory="true" name="id_impuesto">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7ec5" mandatory="true" name="id_producto">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="394bb:1408f3dd451:-7f9b" name="PK_IMPUESTOS_PRODUCTOS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="394bb:1408f3dd451:-7f65" name="FK_impuestos_productos_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_IMPUESTOS" referenced-table="impuestos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_impuesto" referenced-key-column-name="id_impuesto"/>
+</foreign-key>
+<foreign-key id="394bb:1408f3dd451:-7ec7" name="FK_impuestos_productos_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PRODUCTOS" referenced-table="productos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_producto" referenced-key-column-name="id_producto"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="394bb:1408f3dd451:-7ead" name="impuestos_mercancias">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7eab" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7eaa" mandatory="true" name="id_impuesto">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7e02" mandatory="true" name="id_mercancia">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+</column-list>
+<primary-key id="394bb:1408f3dd451:-7ea8" name="PK_IMPUESTOS_MERCANCIAS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="394bb:1408f3dd451:-7e9a" name="FK_impuestos_mercancias_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_IMPUESTOS" referenced-table="impuestos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_impuesto" referenced-key-column-name="id_impuesto"/>
+</foreign-key>
+<foreign-key id="394bb:1408f3dd451:-7e04" name="FK_impuestos_mercancias_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_MERCANCIAS" referenced-table="mercancias" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_mercancia" referenced-key-column-name="id_mercancia"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="394bb:1408f3dd451:-7dcf" name="impuestos_ventas">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7dcd" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7dcc" mandatory="true" name="id_impuesto">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7d7b" mandatory="true" name="id_venta">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7c5e" mandatory="false" name="porcentaje">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+</column-list>
+<primary-key id="394bb:1408f3dd451:-7dca" name="PK_IMPUESTOS_VENTAS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="394bb:1408f3dd451:-7dab" name="FK_impuestos_ventas_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_IMPUESTOS" referenced-table="impuestos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_impuesto" referenced-key-column-name="id_impuesto"/>
+</foreign-key>
+<foreign-key id="394bb:1408f3dd451:-7d7d" name="FK_impuestos_ventas_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_VENTAS" referenced-table="ventas" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_venta" referenced-key-column-name="id_venta"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="394bb:1408f3dd451:-7d62" name="impuestos_compras">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7d60" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7d5f" mandatory="true" name="id_impuesto">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7cde" mandatory="true" name="id_compra">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="394bb:1408f3dd451:-7c5b" mandatory="false" name="porcentaje">
+<data-type name="FLOAT4" selected-variant-pattern="FLOAT4"/>
+</column>
+</column-list>
+<primary-key id="394bb:1408f3dd451:-7d5d" name="PK_IMPUESTOS_COMPRAS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="394bb:1408f3dd451:-7d39" name="FK_impuestos_compras_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_IMPUESTOS" referenced-table="impuestos" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_impuesto" referenced-key-column-name="id_impuesto"/>
+</foreign-key>
+<foreign-key id="394bb:1408f3dd451:-7ce0" name="FK_impuestos_compras_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_COMPRAS" referenced-table="compras" referenced-table-schema="proyecto_administrativo" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id_compra" referenced-key-column-name="id_compra"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+<diagram>
+<table-figure refid="63ae13:140040f52ea:-7fff" x="4418" y="202"/>
+<table-figure refid="63ae13:140040f52ea:-7ff4" x="7145" y="343"/>
+<table-figure refid="63ae13:140040f52ea:-7fed" x="7123" y="497"/>
+<table-figure refid="63ae13:140040f52ea:-7f44" x="6761" y="334"/>
+<table-figure refid="63ae13:140040f52ea:-7f3e" x="535" y="538"/>
+<table-figure refid="63ae13:140040f52ea:-7f33" x="6890" y="752"/>
+<table-figure refid="63ae13:140040f52ea:-7ea5" x="6899" y="1015"/>
+<table-figure refid="63ae13:140040f52ea:-7e5a" x="832" y="255"/>
+<table-figure refid="63ae13:140040f52ea:-7e12" x="1684" y="202"/>
+<table-figure refid="63ae13:140040f52ea:-7ddb" x="7158" y="888"/>
+<table-figure refid="63ae13:140040f52ea:-7dd5" x="7139" y="707"/>
+<table-figure refid="63ae13:140040f52ea:-7d69" x="1711" y="357"/>
+<table-figure refid="63ae13:140040f52ea:-7ca7" x="5" y="618"/>
+<table-figure refid="63ae13:140040f52ea:-7b10" x="1258" y="835"/>
+<table-figure refid="63ae13:140040f52ea:-7a89" x="1863" y="354"/>
+<table-figure refid="63ae13:140040f52ea:-7a55" x="189" y="571"/>
+<table-figure refid="63ae13:140040f52ea:-7a49" x="2342" y="163"/>
+<table-figure refid="63ae13:140040f52ea:-7a40" x="584" y="246"/>
+<table-figure refid="63ae13:140040f52ea:-7793" x="6573" y="923"/>
+<table-figure refid="63ae13:140040f52ea:-7712" x="4590" y="190"/>
+<table-figure refid="63ae13:140040f52ea:-75e0" x="6403" y="6"/>
+<table-figure refid="2c19a:140047c6454:-7fbd" x="7194" y="42"/>
+<table-figure refid="2c19a:140047c6454:-7fb5" x="6754" y="40"/>
+<table-figure refid="2c19a:140047c6454:-7ee3" x="1941" y="120"/>
+<table-figure refid="394bb:1408f3dd451:-7fa4" x="1394" y="114"/>
+<table-figure refid="394bb:1408f3dd451:-7f9c" x="4335" y="19"/>
+<table-figure refid="394bb:1408f3dd451:-7ead" x="715" y="383"/>
+<table-figure refid="394bb:1408f3dd451:-7dcf" x="399" y="541"/>
+<table-figure refid="394bb:1408f3dd451:-7d62" x="107" y="692"/>
+</diagram>
+</clay-model>
